@@ -86,7 +86,14 @@
       };
     };
   };
-  
+
+  hardware.graphics = {
+          enable = true;
+                 extraPackages = with pkgs; [
+        libva
+       # whatever va and other drivers ur gonna use 
+      ];
+   };
   programs.dconf.enable = true;
   programs.steam = {
   enable = true;
@@ -109,11 +116,7 @@
   environment.systemPackages = with pkgs; [  
    pkgs.vscodium
    pkgs.gamescope
-   libva 
-   pkgs.libva-vdpau-driver
-   pkgs.intel-vaapi-driver
    #pkgs.gpu-screen-recorder-gtk
-   pkgs.intel-media-driver
    pkgs.xdg-desktop-portal-gnome
    pkgs.gpu-screen-recorder
    kdePackages.layer-shell-qt
