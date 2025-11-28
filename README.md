@@ -6,3 +6,5 @@ If you are using Nixos and Noctalia but the GTK colors are not changing, run thi
 sudo chown -R mikuri:users ~/.config/
 sudo chmod -R u+rw ~/.config/
 ```
+
+- [noctalia-shell](https://github.com/noctalia-dev/noctalia-shell)
