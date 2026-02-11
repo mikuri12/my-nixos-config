@@ -8,3 +8,6 @@ sudo chmod u+rw ~/.config -R
 ```
 
 - [noctalia-shell](https://github.com/noctalia-dev/noctalia-shell)
+
+#preview 
+![preview 1](preview/image.png)
