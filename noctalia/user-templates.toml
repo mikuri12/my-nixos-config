@@ -1,0 +1,18 @@
+[config]
+
+[templates]
+
+[templates.rmpc]
+input_path = '~/.config/noctalia/templates/rmpc-theme.ron'
+output_path = '~/.config/rmpc/themes/current.ron'
+# Opcional: comando para recargar rmpc después de generar el tema
+#post_hook = 'pkill -USR1 rmpc'  # o el comando que uses para recargar
+
+[templates.discord]
+input_path = '~/.config/noctalia/templates/discord.css'
+output_path = '~/.config//vesktop/themes/system24.theme.css'
+
+[templates.colloid-icons]
+input_path = "~/.config/noctalia/templates/icons.cfg"
+output_path = "~/.config/noctalia/mots/etc/colloid-noctalia.conf"
+post_hook = "sh ~/.config/noctalia/mots/bin/dynamic_icons.sh"
