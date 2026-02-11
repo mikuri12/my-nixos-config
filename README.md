@@ -12,6 +12,5 @@ sudo chmod u+rw ~/.config -R
 # preview 
 ![preview 1](preview/image.png)
 ![preview 1](preview/preview.png)
-![preview 1](preview/preview1.png)
 ![preview 1](preview/preview2.png)
 ![preview 1](preview/preview3.png)
