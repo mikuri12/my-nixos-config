@@ -12,7 +12,3 @@ output_path = '~/.config/rmpc/themes/current.ron'
 input_path = '~/.config/noctalia/templates/discord.css'
 output_path = '~/.config//vesktop/themes/system24.theme.css'
 
-[templates.colloid-icons]
-input_path = "~/.config/noctalia/templates/icons.cfg"
-output_path = "~/.config/noctalia/mots/etc/colloid-noctalia.conf"
-post_hook = "sh ~/.config/noctalia/mots/bin/dynamic_icons.sh"
