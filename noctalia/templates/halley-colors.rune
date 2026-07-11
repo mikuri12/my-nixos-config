@@ -1,0 +1,32 @@
+decorations:
+  border:
+    colour-focused "{{colors.primary.default.hex}}"
+    colour-unfocused "{{colors.surface_variant.default.hex}}"
+  end
+  secondary-border:
+    colour-focused "{{colors.tertiary.default.hex}}"
+    colour-unfocused "{{colors.surface_variant.default.hex}}"
+  end
+end
+
+node:
+  background-colour "{{colors.surface_variant.default.hex}}"
+end
+
+overlays:
+  background-colour "{{colors.surface.default.hex}}"
+  text-colour "{{colors.on_surface.default.hex}}"
+  error-colour "{{colors.error.default.hex}}"
+end
+
+field:
+  pins:
+    colour "{{colors.on_primary.default.hex}}"
+    background-colour "{{colors.primary.default.hex}}"
+  end
+end
+
+background:
+  colour "{{colors.surface.default.hex}}"
+  accent-colour "{{colors.tertiary.default.hex}}"
+end

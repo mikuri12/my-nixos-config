@@ -2,6 +2,11 @@
 
 [templates]
 
+[templates.halley-colors]
+input_path = '~/.config/noctalia/templates/halley-colors.rune'
+output_path = '~/.config/halley/colors.rune'
+post_hook = 'halleyctl reload'
+
 [templates.rmpc]
 input_path = '~/.config/noctalia/templates/rmpc-theme.ron'
 output_path = '~/.config/rmpc/themes/current.ron'
