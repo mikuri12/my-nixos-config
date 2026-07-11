@@ -1,0 +1,483 @@
+@author "Dustin Pilgrim"
+@description "Spatial Wayland compositor built around infinite workspace navigation"
+
+gather "colors.rune"
+
+env:
+  QT_QPA_PLATFORM "wayland"
+  QT_QPA_PLATFORMTHEME "qt6ct"
+  GDK_BACKEND "wayland"
+  MOZ_ENABLE_WAYLAND "1"
+  ELECTRON_OZONE_PLATFORM_HINT "auto"
+  NIXOS_OZONE_WL "1"
+  LIBVA_DRIVER_NAME "iHD"
+  MESA_LOADER_DRIVER_NAME "iris"
+end
+
+autostart:
+  once "noctalia"
+end
+
+cursor:
+  theme "Hatsune-Miku"
+  size 22
+  hide-when-typing true
+  hide-after-ms 2000
+end
+
+input:
+  repeat-rate 30
+  repeat-delay 500
+  focus-mode "click"
+  raise-on-click true
+  keyboard:
+    layout "us"
+    variant ""
+    options ""
+    model ""
+  end
+  gestures:
+    enabled true
+    client-passthrough true
+    touch-passthrough true
+    pinch-to-zoom true
+    pinch-scope "empty-field"
+    compositor-scope "global"
+    modifier "$mod"
+    scroll-pan "empty-field"
+    swipe-threshold-px 120
+    pan-fingers 3
+    pan-momentum true
+    pan-decay-rate 6
+    flick-min-px-per-s 200
+    swipe-up-4 "apogee-open"
+    apogee-swipe-down-4 "apogee-close"
+  end
+  touchpad:
+    tap true
+    natural-scroll true
+    dwt true
+    accel-profile "adaptive"
+    scroll-method "two-finger"
+    click-method "clickfinger"
+  end
+  mouse:
+    natural-scroll false
+    accel-profile "flat"
+  end
+end
+
+font:
+  family "maple-mono-nf"
+  size 11
+end
+
+screenshot:
+  directory "$env.HOME/Pictures/Screenshots/"
+end
+
+debug:
+  overlay-fps false
+  show-ring-when-resizing true
+end
+
+apogee:
+  enabled true
+  live-previews false
+  transition-ms 320
+  gap 24
+  max-rows 3
+  background-dim 0.85
+end
+
+viewport:
+  HDMI-A-1:
+    enabled true
+
+    offset-x 0
+    offset-y 0
+
+    width 1366
+    height 768
+
+    rate 60.000
+    transform 0
+    vrr "off"
+    focus-ring:
+      primary-rx 820.0
+      primary-ry 420.0
+      offset-x 0
+      offset-y 0
+    end
+  end
+end
+
+background:
+  mode "none"
+  shader "space"
+  path ""
+  fit "cover"
+  colour "#181a26"
+  accent-colour "#8fa8d8"
+  intensity 1.0
+  animated false
+end
+
+field:
+  gap 20.0
+  active-windows-allowed 5
+  pins:
+    corner "top-right"
+    colour "auto"
+    background-colour "auto"
+    size 1.0
+  end
+  close-restore-focus true
+  close-restore-pan "if-offscreen"
+
+  zoom:
+    enabled true
+    step 1.10
+    min 0.35
+    max 1.35
+    smooth true
+    smooth-rate 12.5
+  end
+
+end
+
+placement:
+  expanded:
+    strategy "center"
+    fallback "center"
+    find-empty-mode "best-effort"
+  end
+
+  landmarks:
+    strategy "nearest-free"
+    normal-blocker "relocate"
+    pinned-blocker "preserve"
+  end
+
+  reveal:
+    enabled true
+    max-pan-px 360
+    animation-ms 180
+    pan-to-new "if-needed"
+  end
+end
+
+node:
+  show-labels "hover"
+  show-app-icons "always"
+
+  node-shape "square"
+  node-label-shape "square"
+
+  icon-size 0.72
+
+  opacity 1.0
+
+  background-colour "auto"
+
+  border-colour-hover "use-window-active"
+  border-colour-inactive "use-window-inactive"
+
+  click-collapsed-outside-focus "activate"
+  click-collapsed-pan "if-offscreen"
+end
+
+decay:
+  active-delay 240
+  inactive-delay 120
+end
+
+trail:
+  history-length 25
+  wrap true
+end
+
+bearings:
+  show-distance true
+  show-icons true
+  show-pinned true
+  fade-distance 1200
+end
+
+clusters:
+  cluster-dwell-ms 2000
+  distance-px 280.0
+  bloom-direction "clockwise"
+  show-icons true
+  default-layout "stacking"
+end
+
+tile:
+  new-on-top false
+  gaps-inner 20
+  gaps-outer 20
+  max-stack 4
+  queue-show-icons true
+end
+
+stacking:
+  max-visible 5
+end
+
+physics:
+  enabled true
+  damping 0.45
+end
+
+animations:
+  enabled true
+
+  smooth-resize:
+    enabled true
+    duration-ms 90
+  end
+
+  maximize:
+    enabled true
+    duration-ms 240
+  end
+
+  fullscreen:
+    enabled true
+    duration-ms 240
+  end
+
+  window-open:
+    enabled true
+    duration-ms 300
+  end
+
+  window-close:
+    enabled true
+    duration-ms 270
+    style "shrink"
+  end
+
+  tile:
+    enabled true
+    duration-ms 240
+  end
+
+  stack:
+    enabled true
+    duration-ms 220
+  end
+
+  cluster:
+    enabled true
+    tiling:
+      open-duration-ms 300
+      stagger-ms 55
+      close-duration-ms 420
+      reflow-duration-ms 400
+    end
+    stacking:
+      open-duration-ms 240
+      close-duration-ms 360
+    end
+  end
+
+  raise:
+    enabled true
+    duration-ms 140
+    scale 1.025
+    shadow-boost 0.18
+    trigger "always"
+  end
+end
+
+effects:
+  blur:
+    enabled false
+    overlays true
+    windows "auto"
+    layer-shell "off"
+    method "dual-kawase"
+    radius 24
+    passes 3
+    saturation 1.10
+    noise 0.012
+  end
+
+  shadows:
+    window:
+      enabled false
+      blur-radius 8
+      spread 0
+      offset-x 0
+      offset-y 5
+      colour "#05030530"
+    end
+
+    node:
+      enabled false
+      blur-radius 14
+      spread 0
+      offset-x 0
+      offset-y 3
+      colour "#05030524"
+    end
+
+    overlay:
+      enabled false
+      blur-radius 24
+      spread 1
+      offset-x 0
+      offset-y 7
+      colour "#05030538"
+    end
+  end
+end
+
+decorations:
+  border:
+    size 1
+    radius 0
+    colour-focused "#d65d26"
+    colour-unfocused "#333333"
+  end
+
+  secondary-border:
+    enabled false
+    size 1
+    gap 2
+    colour-focused "#fabd2f"
+    colour-unfocused "#1f1f1f"
+  end
+
+  resize-using-border true
+end
+
+overlays:
+  background-colour "auto"
+  text-colour "auto"
+  error-colour "#fb4934"
+  shape "square"
+  borders "true"
+  border-source "primary"
+
+  blur true
+end
+
+keybinds:
+  mod "super"
+
+  "$var.mod+shift+r" "reload"
+  "$var.mod+n" "toggle-state"
+  "$var.mod+m" "maximize-focused"
+  "$var.mod+f" "toggle-fullscreen"
+  "$var.mod+p" "noctalia msg screenshot-fullscreen"
+  "$var.mod+q" "cluster-layout cycle"
+
+  "$var.mod+mousewheelup" "zoom-in"
+  "$var.mod+mousewheeldown" "zoom-out"
+  "$var.mod+middlemouse" "zoom-reset"
+  "$var.mod+equal" "zoom-in"
+  "$var.mod+minus" "zoom-out"
+
+  "$var.mod+shift+e" "quit"
+
+  "$var.mod+left" "node-move left"
+  "$var.mod+right" "node-move right"
+  "$var.mod+up" "node-move up"
+  "$var.mod+down" "node-move down"
+
+  "$var.mod+h" "maximize-focused"
+  "$var.mod+g" "apogee"
+
+  "$var.mod+shift+left" "monitor-focus left"
+  "$var.mod+shift+right" "monitor-focus right"
+  "$var.mod+shift+up" "monitor-focus up"
+  "$var.mod+shift+down" "monitor-focus down"
+
+  "$var.mod+shift+c" "cluster-mode"
+  "$var.mod+shift+l" "cluster-layout cycle"
+  "$var.mod+1" "cluster slot 1"
+  "$var.mod+2" "cluster slot 2"
+  "$var.mod+3" "cluster slot 3"
+  "$var.mod+4" "cluster slot 4"
+  "$var.mod+5" "cluster slot 5"
+  "$var.mod+6" "cluster slot 6"
+  "$var.mod+7" "cluster slot 7"
+  "$var.mod+8" "cluster slot 8"
+  "$var.mod+9" "cluster slot 9"
+  "$var.mod+0" "cluster slot 10"
+
+  "$var.mod+z" "bearings-show"
+  "$var.mod+shift+z" "bearings-toggle"
+
+  "$var.mod+." "trail-next"
+  "$var.mod+shift+comma" "trail-prev"
+
+  "alt+tab" "cycle-focus"
+  "alt+shift+tab" "cycle-focus-backward"
+
+  "$var.mod+return" "foot"
+  "$var.mod+d" "fuzzel"
+
+  "$var.mod+leftmouse" "move-window"
+  "$var.mod+rightmouse" "resize-window"
+  "$var.mod+shift+leftmouse" "pan-field"
+
+  "$var.mod+left" "tile-focus left"
+  "$var.mod+right" "tile-focus right"
+  "$var.mod+up" "tile-focus up"
+  "$var.mod+down" "tile-focus down"
+
+  "$var.mod+ctrl+left" "tile-swap left"
+  "$var.mod+ctrl+right" "tile-swap right"
+  "$var.mod+ctrl+up" "tile-swap up"
+  "$var.mod+ctrl+down" "tile-swap down"
+
+  "$var.mod+left" "stack-cycle forward"
+  "$var.mod+right" "stack-cycle backward"
+
+  "$var.mod+shift+s" "halleyctl capture menu"
+
+  "$var.mod+e" "foot -e yazi"
+  "$var.mod+shift+w" "brave"
+  "$var.mod+c" "close-focused"
+
+  "$var.mod+a" "noctalia msg panel-toggle launcher"
+  "$var.mod+s" "noctalia msg panel-toggle control-center"
+  "$var.mod+comma" "noctalia msg settings-toggle"
+  "$var.mod+v" "noctalia msg panel-toggle clipboard"
+  "$var.mod+l" "noctalia msg screen-lock"
+  "$var.mod+j" "noctalia msg bar-toggle"
+  "$var.mod+ctrl+t" "noctalia msg panel-toggle wallpaper"
+
+  "$var.mod+shift+p" "noctalia msg screenshot-region"
+
+  "XF86AudioRaiseVolume" "wpctl set-volume -l 1 @default_audio_sink@ 5%+"
+  "XF86AudioLowerVolume" "wpctl set-volume @default_audio_sink@ 5%-"
+  "XF86AudioMute" "wpctl set-mute @default_audio_sink@ toggle"
+end
+
+rules:
+  rule:
+    app-id "firefox"
+    title [r"File Upload.*", r"Open File.*", r"Save File.*", r"Choose.*"]
+    spawn-placement "center"
+    cluster-participation "float"
+  end
+end
+
+gamescope:
+  enabled true
+  monitor "focused"
+  output-width "auto"
+  output-height "auto"
+  game-width "auto"
+  game-height "auto"
+  refresh "auto"
+  fullscreen true
+  borderless false
+  suppress-overlays true
+  passthrough-pointer-lock true
+  bypass-spatial-camera true
+end
