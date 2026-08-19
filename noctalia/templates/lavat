@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+primary='{{colors.primary.default.hex}}'
+tertiary='{{colors.tertiary.default.hex}}'
+
+ORIG_PATH=$(echo "$PATH" | tr ":" "\n" | grep -v "$HOME/.local/bin" | tr "\n" ":")
+
+p="${primary#\#}"
+t="${tertiary#\#}"
+exec env PATH="$ORIG_PATH" lavat -g -c "$(tr a-f A-F <<<"$p")" -k "$(tr a-f A-F <<<"$t")" "$@"

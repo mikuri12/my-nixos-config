@@ -1,11 +1,11 @@
 decorations:
   border:
     colour-focused "{{colors.primary.default.hex}}"
-    colour-unfocused "{{colors.surface_variant.default.hex}}"
+    colour-unfocused "{{colors.primary.default.hex}}"
   end
   secondary-border:
-    colour-focused "{{colors.tertiary.default.hex}}"
-    colour-unfocused "{{colors.surface_variant.default.hex}}"
+    colour-focused "{{colors.surface.default.hex}}"
+    colour-unfocused "{{colors.surface.default.hex}}"
   end
 end
 
@@ -29,4 +29,18 @@ end
 background:
   colour "{{colors.surface.default.hex}}"
   accent-colour "{{colors.tertiary.default.hex}}"
+end
+
+effects:
+  shadows:
+    window:
+      colour "{{colors.surface.default.hex}}"
+    end
+    node:
+      colour "{{colors.surface.default.hex}}"
+    end
+    overlay:
+      colour "{{colors.surface.default.hex}}"
+    end
+  end
 end

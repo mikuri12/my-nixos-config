@@ -1,0 +1,53 @@
+#!/usr/bin/env bash
+
+export NF_PRIMARY='{{colors.primary.default.hex}}'
+export NF_SECONDARY='{{colors.secondary.default.hex}}'
+export NF_TERTIARY='{{colors.tertiary.default.hex}}'
+export NF_ON_SURFACE='{{colors.on_surface.default.hex}}'
+export NF_OUTLINE='{{colors.outline.default.hex}}'
+
+hex=${NF_PRIMARY#\#}
+r=$((16#${hex:0:2}))
+g=$((16#${hex:2:2}))
+b=$((16#${hex:4:2}))
+ansi=$((16 + (r * 5 + 127) / 255 * 36 + (g * 5 + 127) / 255 * 6 + (b * 5 + 127) / 255))
+
+ORIG_PATH=$(echo "$PATH" | tr ":" "\n" | grep -v "$HOME/.local/bin" | tr "\n" ":")
+
+env PATH="$ORIG_PATH" meowfetch --color "$ansi" "$@" 2>&1 | perl -CSD -pe '
+BEGIN {
+    $R = "\e[0m";
+    sub rgb { map { hex } ($_[0] =~ /(..)(..)(..)$/) }
+    sub fg { sprintf("\e[38;2;%d;%d;%dm", rgb($_[0])) }
+    sub bd { sprintf("\e[1;38;2;%d;%d;%dm", rgb($_[0])) }
+
+    $ART = bd($ENV{NF_PRIMARY});
+    $LBL = bd($ENV{NF_SECONDARY});
+    $VAL = fg($ENV{NF_ON_SURFACE});
+    $ARR = fg($ENV{NF_OUTLINE});
+    $BRD = fg($ENV{NF_TERTIARY});
+
+    # Degradado de 7 pasos entre primary y tertiary para las bolitas.
+    my @a = rgb($ENV{NF_PRIMARY});
+    my @b = rgb($ENV{NF_TERTIARY});
+    @DOT = map {
+        my $t = $_ / 6;
+        sprintf("\e[38;2;%d;%d;%dm",
+            map { int($a[$_] + ($b[$_] - $a[$_]) * $t + 0.5) } 0 .. 2)
+    } 0 .. 6;
+}
+
+# 1er bloque bold de la linea = arte del gato, 2do = etiqueta (OS, CPU...).
+s/\e\[1m(.*?)\e\[0m/$ART$1$R/;
+s/\e\[1m(.*?)\e\[0m/$LBL$1$R/;
+
+# Separador y valor, hasta el borde vertical derecho del marco.
+s/> (\S.*?)(\s*)(?=\x{2502})/$ARR> $VAL$1$R$2/;
+
+# Bolitas powerline (pares U+E0B6 U+E0B4), una por paso del degradado.
+$i = 0;
+s/(\x{e0b6}\x{e0b4})/$DOT[$i++ % 7] . $1 . $R/ge;
+
+# Marco y separadores verticales (box drawing U+2500..U+257F).
+s/([\x{2500}-\x{257f}]+)/$BRD$1$R/g;
+'
