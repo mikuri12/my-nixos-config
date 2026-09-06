@@ -1,0 +1,1140 @@
+config_version = 13
+
+[bar]
+order = [ "Umin. Mango", "Min. Mango", "Micro", "Micro Large", "Minimal", "default", "IZQUIERDA" ]
+
+    [bar.IZQUIERDA]
+    capsule_radius = 0
+    center = [ "workspaces" ]
+    concave_edge_corners = false
+    enabled = true
+    end = [ "switcher_2", "tray", "btn_3", "session" ]
+    margin_edge = 6
+    margin_ends = 10
+    padding = 3
+    position = "left"
+    radius = 0
+    shadow = false
+    start = [ "ic_browser", "ic_files", "ic_term" ]
+
+    [bar.Micro]
+    capsule_radius = 0
+    center = []
+    enabled = false
+    end = [ "mango_layouts_btn", "spacer", "group:g_clock" ]
+    font_family = "Terminess Nerd Font Mono"
+    padding = 5
+    panel_overlap = 0
+    position = "bottom"
+    radius = 0
+    shadow = true
+    start = [ "group:g1" ]
+    thickness = 20
+
+        [bar.Micro.dead_zone.actions]
+        scroll_down = "exec mmsg dispatch viewtoright,0"
+        scroll_up = "exec mmsg dispatch viewtoleft,0"
+
+        [[bar.Micro.capsule_group]]
+        enabled = true
+        fill = "surface_variant"
+        id = "g_clock"
+        members = [ "clock", "tray" ]
+        opacity = 0.0
+        padding = 0.0
+        radius = 0.0
+
+        [[bar.Micro.capsule_group]]
+        enabled = true
+        fill = "surface_variant"
+        id = "g1"
+        members = [ "terminal", "spacer", "browser", "spacer", "explorer", "spacer", "music" ]
+        opacity = 0.0
+        padding = 0.0
+        radius = 0.0
+
+    [bar."Micro Large"]
+    capsule_radius = 0
+    center = []
+    enabled = false
+    end = [ "group:g_clock" ]
+    margin_ends = 0
+    padding = 5
+    position = "bottom"
+    radius = 0
+    shadow = true
+    start = [ "workspaces", "active_window" ]
+    thickness = 20
+
+        [bar."Micro Large".dead_zone.actions]
+        scroll_down = "exec mmsg dispatch viewtoright,0"
+        scroll_up = "exec mmsg dispatch viewtoleft,0"
+
+        [[bar."Micro Large".capsule_group]]
+        accordion = false
+        accordion_direction = "end"
+        enabled = true
+        fill = "surface_variant"
+        id = "g_clock"
+        members = [ "btn", "clock", "tray" ]
+        opacity = 0.0
+        padding = 0.0
+        radius = 0.0
+
+    [bar."Min. Mango"]
+    capsule_radius = 0
+    center = []
+    enabled = false
+    end = [ "group:g5", "group:g2", "group:g3", "group:g4", "group:g8" ]
+    margin_ends = 0
+    padding = 5
+    position = "bottom"
+    radius = 0
+    shadow = true
+    start = [ "workspaces", "group:g6" ]
+    thickness = 20
+
+        [bar."Min. Mango".dead_zone.actions]
+        scroll_down = "exec mmsg dispatch viewtoright,0"
+        scroll_up = "exec mmsg dispatch viewtoleft,0"
+
+        [[bar."Min. Mango".capsule_group]]
+        accordion = false
+        accordion_direction = "end"
+        enabled = true
+        fill = "surface_variant"
+        id = "g1"
+        members = [ "cpu", "espacio1", "ram", "espacio1", "temp", "custom_button_2" ]
+        opacity = 0.0
+        padding = 0.0
+        radius = 0.0
+
+        [[bar."Min. Mango".capsule_group]]
+        accordion = false
+        accordion_direction = "end"
+        enabled = true
+        fill = "surface_variant"
+        id = "g2"
+        members = [ "bracket_open", "lbl_vol", "volume", "bracket_close" ]
+        opacity = 0.0
+        padding = 0.0
+        radius = 0.0
+
+        [[bar."Min. Mango".capsule_group]]
+        accordion = false
+        accordion_direction = "end"
+        enabled = true
+        fill = "surface_variant"
+        id = "g3"
+        members = [ "bracket_open", "lbl_cpu", "cpu", "bracket_close" ]
+        opacity = 0.0
+        padding = 0.0
+        radius = 0.0
+
+        [[bar."Min. Mango".capsule_group]]
+        accordion = false
+        accordion_direction = "end"
+        enabled = true
+        fill = "surface_variant"
+        id = "g4"
+        members = [ "bracket_open", "lbl_ram", "ram", "bracket_close" ]
+        opacity = 0.0
+        padding = 0.0
+        radius = 0.0
+
+        [[bar."Min. Mango".capsule_group]]
+        accordion = false
+        accordion_direction = "end"
+        enabled = true
+        fill = "surface_variant"
+        id = "g8"
+        members = [ "bracket_open", "clock", "bracket_close", "tray" ]
+        opacity = 0.0
+        padding = 0.0
+        radius = 0.0
+
+        [[bar."Min. Mango".capsule_group]]
+        accordion = false
+        accordion_direction = "end"
+        enabled = true
+        fill = "surface_variant"
+        id = "g5"
+        members = [ "bracket_open", "keyboard_layout", "bracket_close" ]
+        opacity = 0.0
+        padding = 0.0
+        radius = 0.0
+
+        [[bar."Min. Mango".capsule_group]]
+        accordion = false
+        accordion_direction = "end"
+        enabled = true
+        fill = "surface_variant"
+        id = "g6"
+        members = [ "lbl_dots", "active_window" ]
+        opacity = 0.0
+        padding = 0.0
+        radius = 0.0
+
+    [bar.Minimal]
+    capsule_radius = 0
+    center = [ "btn_2" ]
+    concave_edge_corners = false
+    enabled = false
+    end = [ "group:g1", "group:g_clock", "tray", "spacer_2" ]
+    hover_highlight = false
+    margin_ends = 0
+    padding = 0
+    panel_overlap = 0
+    position = "bottom"
+    radius = 0
+    shadow = false
+    start = [ "workspaces" ]
+    thickness = 20
+
+        [[bar.Minimal.capsule_group]]
+        accordion = false
+        accordion_direction = "end"
+        enabled = true
+        fill = "surface_variant"
+        id = "g_clock"
+        members = [ "bracket_open", "clock", "custom_button_2", "date", "bracket_close" ]
+        opacity = 0.0
+        padding = 0.0
+        radius = 0.0
+
+        [[bar.Minimal.capsule_group]]
+        accordion = false
+        accordion_direction = "end"
+        enabled = true
+        fill = "surface_variant"
+        id = "g1"
+        members = [ "lbl_vol", "volume" ]
+        opacity = 0.0
+        padding = 0.0
+        radius = 0.0
+        widget_spacing = 0
+
+    [bar."Umin. Mango"]
+    capsule_radius = 0
+    center = [ "switcher" ]
+    enabled = false
+    end = [ "group:g1", "group:g_vol", "group:g_clock" ]
+    margin_ends = 0
+    padding = 5
+    radius = 0
+    shadow = false
+    start = [ "workspaces" ]
+    thickness = 20
+
+        [bar."Umin. Mango".dead_zone.actions]
+        scroll_down = "exec mmsg dispatch viewtoright,0"
+        scroll_up = "exec mmsg dispatch viewtoleft,0"
+
+        [[bar."Umin. Mango".capsule_group]]
+        enabled = true
+        fill = "surface_variant"
+        id = "g_vol"
+        members = [ "bracket_open", "lbl_vol", "volume", "bracket_close" ]
+        opacity = 0.0
+        padding = 0.0
+        radius = 0.0
+
+        [[bar."Umin. Mango".capsule_group]]
+        enabled = true
+        fill = "surface_variant"
+        id = "g_clock"
+        members = [ "bracket_open", "clock", "bracket_close", "tray" ]
+        opacity = 0.0
+        padding = 0.0
+        radius = 0.0
+
+        [[bar."Umin. Mango".capsule_group]]
+        enabled = true
+        fill = "surface_variant"
+        id = "g1"
+        members = [ "bracket_open", "mango_layouts_btn", "bracket_close" ]
+        opacity = 0.0
+        padding = 0.0
+        radius = 0.0
+
+    [bar.default]
+    capsule_radius = 0
+    center = []
+    concave_edge_corners = false
+    enabled = false
+    end = [ "group:g1", "group:g3", "group:g2" ]
+    margin_ends = 0
+    padding = 0
+    position = "bottom"
+    radius = 0
+    shadow = false
+    start = [ "custom_username", "group:g4" ]
+    thickness = 20
+
+        [[bar.default.capsule_group]]
+        accordion = false
+        accordion_direction = "end"
+        enabled = true
+        fill = "surface_variant"
+        id = "g1"
+        members = [ "lbl_layout", "parentheses_open", "mango_layouts_btn", "parentheses_close" ]
+        opacity = 0.0
+        padding = 0.0
+        radius = 0.0
+        widget_spacing = 0
+
+        [[bar.default.capsule_group]]
+        accordion = false
+        accordion_direction = "end"
+        enabled = true
+        fill = "surface_variant"
+        id = "g2"
+        members = [ "lbl_workspace", "parentheses_open", "workspaces", "parentheses_close", "tray" ]
+        opacity = 0.0
+        padding = 0.0
+        radius = 0.0
+        widget_spacing = 3
+
+        [[bar.default.capsule_group]]
+        accordion = false
+        accordion_direction = "end"
+        enabled = false
+        fill = "surface_variant"
+        id = "g3"
+        members = [ "lbl_clock", "parentheses_open", "clock", "custom_button_2", "date", "parentheses_close" ]
+        opacity = 0.0
+        padding = 6.0
+        radius = 0.0
+        widget_spacing = 0
+
+        [[bar.default.capsule_group]]
+        accordion = false
+        accordion_direction = "end"
+        enabled = true
+        fill = "surface_variant"
+        id = "g4"
+        members = [ "lbl_dots", "active_window" ]
+        opacity = 0.0
+        padding = 0.0
+        radius = 0.0
+
+[control_center]
+hidden_tabs = [ "monitor", "power", "network", "bluetooth", "weather", "notifications" ]
+show_session_button = false
+show_shortcut_labels = false
+sidebar_section = "none"
+
+    [control_center.calendar]
+    show_events_card = false
+
+    [[control_center.shortcuts]]
+    type = "caffeine"
+
+    [[control_center.shortcuts]]
+    type = "nightlight"
+
+    [[control_center.shortcuts]]
+    type = "notification"
+
+    [[control_center.shortcuts]]
+    type = "session"
+
+[desktop_widgets]
+enabled = false
+schema_version = 2
+widget_order = []
+
+    [desktop_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [desktop_widgets.widget]
+
+[idle]
+behavior_order = [ "lock", "screen-off", "lock-and-suspend" ]
+pre_action_fade_seconds = 0
+
+    [idle.behavior.lock]
+    action = "lock"
+    enabled = true
+    timeout = 600.0
+
+    [idle.behavior.lock-and-suspend]
+    action = "lock_and_suspend"
+    enabled = true
+    timeout = 900.0
+
+    [idle.behavior.screen-off]
+    action = "screen_off"
+    enabled = true
+    timeout = 700.0
+
+[location]
+auto_locate = true
+
+[lockscreen]
+blur_intensity = 0.0
+fingerprint = false
+
+[lockscreen_widgets]
+enabled = true
+schema_version = 2
+widget_order = [
+    "lockscreen-login-box@WL-1",
+    "lockscreen-login-box@DVI-D-1",
+    "lockscreen-login-box@HDMI-A-1",
+    "lockscreen-login-box@DP-1",
+    "lockscreen-widget-0000000000000001",
+    "lockscreen-widget-0000000000000002",
+    "lockscreen-widget-0000000000000003",
+    "lockscreen-widget-0000000000000004",
+    "lockscreen-widget-0000000000000005",
+    "lockscreen-widget-0000000000000006",
+    "lockscreen-widget-0000000000000007",
+    "lockscreen-widget-0000000000000008",
+    "lockscreen-widget-0000000000000009",
+    "lockscreen-widget-000000000000000a"
+]
+
+    [lockscreen_widgets.grid]
+    cell_size = 32
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@DP-1"]
+    box_height = 196.0
+    box_width = 720.0
+    cx = 960.0
+    cy = 955.08197021484375
+    output = "DP-1"
+    placement_height = 0.0
+    placement_width = 0.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@DP-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.84999999999999998
+        background_radius = 0.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 0.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@DVI-D-1"]
+    box_height = 70.0
+    box_width = 400.0
+    cx = 960.0
+    cy = 985.0
+    output = "DVI-D-1"
+    placement_height = 1080.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@DVI-D-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.0
+        background_radius = 0.0
+        center_password_text = true
+        input_opacity = 0.95000000000000007
+        input_radius = 0.0
+        layout = "compact"
+        show_caps_lock = false
+        show_keyboard_layout = false
+        show_login_button = false
+        show_media = false
+        show_session_buttons = false
+        show_unlock_hint = false
+        show_weather = false
+
+    [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1"]
+    box_height = 196.0
+    box_width = 720.0
+    cx = 960.0
+    cy = 768.0
+    output = "HDMI-A-1"
+    placement_height = 768.0
+    placement_width = 1366.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.95999999999999996
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@WL-1"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 468.0
+    cy = 315.5
+    output = "WL-1"
+    placement_height = 1040.0
+    placement_width = 1880.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@WL-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000001]
+    box_height = 0.0
+    box_width = 0.0
+    cx = 960.0
+    cy = 540.0
+    output = "DP-1"
+    placement_height = 0.0
+    placement_width = 0.0
+    rotation = 0.0
+    type = "sticker"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000001.settings]
+        background = false
+        image_path = "/home/ezequiel/Descargas/fotos/devuanwhite.svg"
+        opacity = 1.0
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000002]
+    box_height = 272.0
+    box_width = 352.0
+    cx = 1741.2022705078125
+    cy = 923.08197021484375
+    output = "DP-1"
+    placement_height = 0.0
+    placement_width = 0.0
+    rotation = 0.2617993950843811
+    type = "sticker"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000002.settings]
+        background = false
+        image_path = "/home/ezequiel/Imágenes/stickers/mate.png"
+        opacity = 1.0
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000003]
+    box_height = 112.0
+    box_width = 128.0
+    cx = 266.8984375
+    cy = 925.87890625
+    output = "DP-1"
+    placement_height = 0.0
+    placement_width = 0.0
+    rotation = 0.0
+    type = "sticker"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000003.settings]
+        background = true
+        background_opacity = 0.90000000000000002
+        background_padding = 0.0
+        background_radius = 0.0
+        image_path = "/home/ezequiel/Imágenes/stickers/amd.png"
+        opacity = 1.0
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000004]
+    box_height = 240.0
+    box_width = 160.0
+    cx = 123.921875
+    cy = 925.19921875
+    output = "DP-1"
+    placement_height = 0.0
+    placement_width = 0.0
+    rotation = -0.0
+    type = "sticker"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000004.settings]
+        background = false
+        image_path = "/home/ezequiel/Imágenes/stickers/powered-by-linux-3372813125.png"
+        opacity = 1.0
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000005]
+    box_height = 0.0
+    box_width = 0.0
+    cx = 1432.136962890625
+    cy = 974.0848388671875
+    output = "DP-1"
+    placement_height = 0.0
+    placement_width = 0.0
+    rotation = -0.2617993950843811
+    type = "sticker"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000005.settings]
+        background = false
+        image_path = "/home/ezequiel/Imágenes/stickers/rust.png"
+        opacity = 1.0
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000006]
+    box_height = 0.0
+    box_width = 0.0
+    cx = 1576.67919921875
+    cy = 781.0550537109375
+    output = "DP-1"
+    placement_height = 0.0
+    placement_width = 0.0
+    rotation = 0.2617993950843811
+    type = "sticker"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000006.settings]
+        background = false
+        image_path = "/home/ezequiel/Imágenes/stickers/helix.svg"
+        opacity = 1.0
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000007]
+    box_height = 128.0
+    box_width = 144.0
+    cx = 1792.0
+    cy = 683.5457763671875
+    output = "DP-1"
+    placement_height = 0.0
+    placement_width = 0.0
+    rotation = -0.2617993950843811
+    type = "sticker"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000007.settings]
+        background = false
+        image_path = "/home/ezequiel/Imágenes/stickers/foot.svg"
+        opacity = 1.0
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000008]
+    box_height = 160.0
+    box_width = 176.0
+    cx = 1624.0
+    cy = 556.0
+    output = "DP-1"
+    placement_height = 0.0
+    placement_width = 0.0
+    rotation = 0.0
+    type = "sticker"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000008.settings]
+        background = false
+        image_path = "/home/ezequiel/Imágenes/stickers/librewolf.svg"
+        opacity = 1.0
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000009]
+    box_height = 112.0
+    box_width = 288.0
+    cx = 960.0
+    cy = 244.0
+    output = "DP-1"
+    placement_height = 0.0
+    placement_width = 0.0
+    rotation = 0.0
+    type = "clock"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000009.settings]
+        background = false
+        background_padding = 32
+        background_radius = 0
+        center_text = true
+        clock_style = "digital"
+        shadow = false
+
+    [lockscreen_widgets.widget.lockscreen-widget-000000000000000a]
+    box_height = 0.0
+    box_width = 0.0
+    cx = 960.0
+    cy = 540.0
+    output = "DVI-D-1"
+    placement_height = 1080.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "clock"
+
+        [lockscreen_widgets.widget.lockscreen-widget-000000000000000a.settings]
+        background = false
+        shadow = false
+
+[nightlight]
+enabled = true
+
+[notification]
+background_opacity = 0.89999997988343239
+layer = "overlay"
+offset_x = 7
+offset_y = 10
+scale = 0.90000000000000002
+
+[osd]
+background_opacity = 0.95999997854232788
+offset_x = 7
+offset_y = 10
+position = "top_left"
+scale = 0.94999999999999996
+
+    [osd.kinds]
+    bluetooth = false
+    lock_keys = false
+    media = false
+    nightlight = false
+    power_profile = false
+    wifi = false
+
+[plugin_settings."ezequiel/applauncher"]
+font_size = 0.0
+grid_columns = 0.0
+icon_size = 1.0
+main_position = "auto"
+max_results = 0.0
+panel_height = 1.0
+panel_width = 1.0
+remember_cursor = false
+
+[plugin_settings."ezequiel/mango_layouts"]
+list_mode = true
+panel_open_near_click = true
+panel_position = "auto"
+
+[plugin_settings."kenn/keybind-cheatsheet"]
+compositor = "mango"
+
+[plugins]
+enabled = [ "noctalia/screen_recorder", "yocraft/desktop-launcher", "ezequiel/mango_layouts", "ezequielgk/profiles" ]
+
+    [[plugins.source]]
+    kind = "git"
+    location = "https://github.com/noctalia-dev/official-plugins"
+    name = "official"
+
+    [[plugins.source]]
+    kind = "git"
+    location = "https://github.com/noctalia-dev/community-plugins"
+    name = "community"
+
+    [[plugins.source]]
+    kind = "git"
+    location = "https://github.com/ezequielgk/My-Lazy-Plugins"
+    name = "My-Lazy-Plugins"
+
+[shell]
+app_icon_colorize = true
+avatar_path = "/home/ezequiel/Imágenes/4fe19042d2c75d6262c38cb9664bfb3e-2055230519.jpg"
+button_borders = false
+card_borders = false
+clipboard_history_max_entries = 20
+corner_radius_scale = 0.0
+font_family = "Cool jazz"
+input_borders = false
+polkit_agent = true
+popup_borders = false
+popup_shadows = false
+screen_time_enabled = true
+telemetry_enabled = false
+
+    [shell.animation]
+    enabled = false
+
+    [shell.greeter_sync]
+    auto_sync = false
+
+    [shell.launcher]
+    app_grid = true
+    categories = false
+    compact = true
+    fetch_exchange_rates = false
+    show_app_origin_indicator = false
+    show_icons = false
+
+        [shell.launcher.providers.calculator]
+        global = false
+
+    [shell.panel]
+    borders = false
+    control_center_placement = "floating"
+    floating_offset = 0
+    launcher_position = "auto"
+    open_near_click_control_center = true
+    open_near_click_launcher = true
+    polkit_placement = "attached"
+    session_placement = "floating"
+    shadow = true
+    transparency_mode = "solid"
+    wallpaper_placement = "floating"
+    wallpaper_position = "center"
+
+    [shell.screenshot]
+    copy_to_clipboard = false
+    freeze_screen = false
+    save_to_file = false
+
+    [shell.session]
+    grid_columns = 1
+
+    [shell.shadow]
+    alpha = 0.0
+    direction = "center"
+
+[theme]
+builtin = "Gruvbox"
+community_palette = "Shinonome"
+custom_palette = "Everforest Material"
+source = "community"
+wallpaper_scheme = "soft"
+
+    [theme.templates]
+    builtin_ids = [ "foot", "gtk3", "gtk4", "helix", "labwc", "mango", "qt", "sway" ]
+    community_ids = [ "opencode", "discord", "zed" ]
+
+[wallpaper]
+directory = "/home/miku/wallpapers"
+
+    [wallpaper.default]
+    path = "/home/miku/wallpapers/Kemuri Susu/Oil Paintings/wallhaven-je9wow_1920x1080.png"
+
+    [wallpaper.last]
+    path = "/home/miku/wallpapers/Kemuri Susu/Oil Paintings/wallhaven-je9wow_1920x1080.png"
+
+    [wallpaper.monitors.HDMI-A-1]
+    path = "/home/miku/wallpapers/Kemuri Susu/Oil Paintings/wallhaven-je9wow_1920x1080.png"
+
+    [wallpaper.monitors.VGA-1]
+    path = "/usr/share/backgrounds/moony-art3.png"
+
+[weather]
+enabled = false
+
+[widget.active_window]
+color = "outline"
+display = "text_only"
+interactive = false
+show_empty_label = true
+
+[widget.bracket_close]
+color = "on_surface_variant"
+glyph = ""
+label = "]"
+show_icon = false
+type = "custom_button"
+
+[widget.bracket_open]
+color = "on_surface_variant"
+glyph = ""
+interactive = false
+label = "["
+show_icon = false
+type = "custom_button"
+
+[widget.browser]
+color = "on_surface_variant"
+glyph = ""
+label = "Web"
+type = "custom_button"
+
+    [widget.browser.actions]
+    left = "exec brave-browser || exec librewolf"
+    right = "exec helium"
+
+[widget.btn]
+color = "secondary"
+show_glyph = false
+show_text = true
+type = "ezequiel/mango_layouts:btn"
+
+[widget.btn_2]
+color = "on_primary"
+show_glyph = false
+show_text = true
+type = "ezequiel/mango_layouts:btn"
+
+[widget.btn_3]
+capsule = true
+capsule_fill = "secondary"
+color = "on_primary"
+icon_color = "on_primary"
+type = "ezequiel/mango_layouts:btn"
+
+[widget.clock]
+color = "tertiary"
+
+[widget.cpu]
+color = "secondary"
+display = "text"
+glyph = "tallymark-1"
+show_label = false
+visualization = "none"
+
+[widget.custom_button_2]
+color = "on_surface"
+glyph = "tallymark-1"
+icon_color = "on_surface"
+type = "custom_button"
+
+[widget.custom_username]
+color = "on_surface_variant"
+glyph = ""
+interactive = false
+label = "miku@neko-void:"
+show_icon = false
+type = "custom_button"
+
+[widget.date]
+color = "tertiary"
+
+[widget.explorer]
+color = "on_surface_variant"
+glyph = ""
+label = "Files"
+type = "custom_button"
+
+    [widget.explorer.actions]
+    left = "exec pcmanfm || exec nautilus"
+    middle = "exec pcmanfm || exec nautilus ~/.config/home-manager"
+    right = "exec pcmanfm || exec nautilus ~/Descargas"
+
+[widget.ic_browser]
+capsule = true
+capsule_fill = "primary"
+glyph = "browser"
+icon_color = "on_primary"
+type = "custom_button"
+
+    [widget.ic_browser.actions]
+    left = "exec brave-browser || exec librewolf"
+    right = "exec helium"
+
+[widget.ic_files]
+capsule = true
+capsule_fill = "secondary"
+glyph = "folder"
+icon_color = "on_primary"
+type = "custom_button"
+
+    [widget.ic_files.actions]
+    left = "exec pcmanfm || exec nautilus"
+    middle = "exec pcmanfm || exec nautilus ~/.config/home-manager"
+    right = "exec pcmanfm || exec nautilus ~/Descargas"
+
+[widget.ic_term]
+capsule = true
+capsule_fill = "tertiary"
+glyph = "terminal"
+icon_color = "on_primary"
+type = "custom_button"
+
+    [widget.ic_term.actions]
+    left = "exec foot || exec kitty"
+    middle = "exec foot || exec kitty -e ranger"
+    right = "exec foot || exec kitty -e htop"
+
+[widget.keyboard_layout]
+color = "secondary"
+display = "full"
+glyph = "tallymark-1"
+hide_when_single_layout = true
+scale = 0.85000000000000009
+show_glyph = false
+
+[widget.launcher]
+capsule = true
+capsule_fill = "secondary"
+capsule_padding = 15
+capsule_radius = "auto"
+color = "primary"
+custom_image = "/home/ezequiel/Descargas/fotos/devuanwhite.svg"
+custom_image_colorize = true
+enabled = false
+icon_color = "outline"
+
+[widget.lbl_clock]
+color = "on_surface_variant"
+glyph = ""
+interactive = false
+label = "C:"
+type = "custom_button"
+
+[widget.lbl_cpu]
+color = "secondary"
+glyph = ""
+interactive = false
+label = "cpu"
+show_icon = false
+type = "custom_button"
+
+[widget.lbl_dots]
+color = "outline"
+glyph = ""
+interactive = false
+label = ":"
+type = "custom_button"
+
+[widget.lbl_layout]
+color = "on_surface_variant"
+glyph = ""
+interactive = false
+label = "L: "
+show_icon = false
+type = "custom_button"
+
+[widget.lbl_ram]
+color = "secondary"
+glyph = ""
+label = "ram"
+show_icon = false
+type = "custom_button"
+
+[widget.lbl_vol]
+color = "secondary"
+glyph = ""
+interactive = false
+label = "vol"
+show_icon = false
+tooltip = "volume"
+type = "custom_button"
+
+[widget.lbl_workspace]
+color = "on_surface_variant"
+glyph = ""
+interactive = false
+label = " W:"
+show_icon = false
+type = "custom_button"
+
+[widget.mango_layouts_btn]
+color = "secondary"
+show_glyph = false
+show_text = true
+type = "ezequiel/mango_layouts:btn"
+
+[widget.media]
+color = "on_surface"
+font_family = "Maple Mono NF"
+hide_when_no_media = true
+
+[widget.music]
+color = "on_surface_variant"
+glyph = ""
+label = "Music"
+type = "custom_button"
+
+    [widget.music.actions]
+    left = "exec strawberry"
+    middle = "exec playerctl play-pause"
+    right = "exec playerctl next"
+    scroll_down = "exec playerctl previous"
+    scroll_up = "exec playerctl next"
+
+[widget.notifications]
+hide_when_no_unread = true
+
+[widget.parentheses_close]
+color = "on_surface_variant"
+glyph = ""
+interactive = false
+label = ")"
+type = "custom_button"
+
+[widget.parentheses_open]
+color = "on_surface_variant"
+glyph = ""
+interactive = false
+label = "("
+type = "custom_button"
+
+[widget.ram]
+color = "secondary"
+display = "text"
+glyph = "tallymark-1"
+show_label = false
+visualization = "none"
+
+[widget.session]
+capsule = true
+capsule_fill = "primary"
+icon_color = "on_primary"
+
+[widget.spacer]
+enabled = false
+scale = 0.40000000000000002
+type = "spacer"
+
+[widget.spacer_2]
+scale = 0.20000000000000001
+type = "spacer"
+
+[widget.switcher]
+color = "on_hover"
+type = "ezequielgk/profiles:switcher"
+
+[widget.switcher_2]
+color = "on_hover"
+type = "ezequielgk/profiles:switcher"
+
+[widget.taskbar]
+color = "outline"
+icon_color = "outline"
+minimal = true
+only_active_workspace = true
+show_window_title = true
+workspace_group_capsule = false
+
+[widget.temp]
+color = "on_surface"
+display = "text"
+glyph = "tallymark-1"
+show_label = false
+
+[widget.terminal]
+color = "on_surface_variant"
+glyph = ""
+label = "Term"
+type = "custom_button"
+
+    [widget.terminal.actions]
+    left = "exec foot || exec kitty"
+    middle = "exec foot || exec kitty -e ranger"
+    right = "exec foot || exec kitty -e htop"
+
+[widget.tray]
+capsule = true
+capsule_fill = "tertiary"
+color = "on_primary"
+detached_panel = true
+drawer = true
+
+[widget.volume]
+color = "secondary"
+glyph = "tallymark-1"
+mute_glyph = "tallymark-1"
+
+[widget.workspaces]
+active_pill_size = 4.8500000000000005
+capsule_opacity = 0.089999999999999997
+capsule_padding = 0
+font_scale = 0.55000000000000004
+hide_when_empty = true
+inactive_pill_size = 1.5
+labels_only_when_occupied = true
+pill_scale = 0.35000000000000003
+scale = 1.1000000000000001
+show_labels = false
+style = "regular"
