@@ -32,7 +32,7 @@ mkdir -p "$THEMES_DIR"
 
 cat >"$OUT" <<XML
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Generado por Noctalia. No editar a mano: se sobrescribe al cambiar de paleta. -->
+
 <theme name="Noctalia">
   <fg0  r="${fg_r}" g="${fg_g}" b="${fg_b}"/>
   <fg1  r="${fgv_r}" g="${fgv_g}" b="${fgv_b}"/>
@@ -56,7 +56,6 @@ themes, state = sys.argv[1], sys.argv[2]
 if not os.path.isdir(themes):
     raise SystemExit(0)
 
-# Temas compilados dentro del binario, en su orden de registro.
 order = ["default", "catppuccin", "dracula", "nord", "gruvbox",
          "rosepine", "tokyonight", "everforest", "cream"]
 

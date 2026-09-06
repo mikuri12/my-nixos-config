@@ -1,0 +1,46 @@
+#!/usr/bin/env sh
+
+if $CLI_SUPPORTS_TRUE_COLOR && $CONFIG_ENABLE_COLORS; then
+
+  THEME_FZF_ICON_COLOR_PRIMARY="$(printf '\033[38;2;{{ colors.primary.default.red }};{{ colors.primary.default.green }};{{ colors.primary.default.blue }}m')"
+  THEME_FZF_ICON_COLOR_SECONDARY="$(printf '\033[38;2;{{ colors.outline.default.red }};{{ colors.outline.default.green }};{{ colors.outline.default.blue }}m')"
+  THEME_FZF_ICON_COLOR_ACCENT="$(printf '\033[38;2;{{ colors.tertiary.default.red }};{{ colors.tertiary.default.green }};{{ colors.tertiary.default.blue }}m')"
+  THEME_FZF_ICON_COLOR_ERROR="$(printf '\033[38;2;{{ colors.error.default.red }};{{ colors.error.default.green }};{{ colors.error.default.blue }}m')"
+
+  THEME_FZF_PREVIEW_TITLE="$(printf '\033[38;2;{{ colors.on_surface.default.red }};{{ colors.on_surface.default.green }};{{ colors.on_surface.default.blue }}m')"
+  THEME_FZF_PREVIEW_KEY="$(printf '\033[38;2;{{ colors.primary.default.red }};{{ colors.primary.default.green }};{{ colors.primary.default.blue }}m')"
+  THEME_FZF_PREVIEW_VALUE="$(printf '\033[38;2;{{ colors.on_surface_variant.default.red }};{{ colors.on_surface_variant.default.green }};{{ colors.on_surface_variant.default.blue }}m')"
+  THEME_FZF_PREVIEW_DIVIDER="$(printf '\033[38;2;{{ colors.outline_variant.default.red }};{{ colors.outline_variant.default.green }};{{ colors.outline_variant.default.blue }}m')"
+
+  THEME_PLAYER_START="$(printf '\033[38;2;{{ colors.on_secondary_container.default.red }};{{ colors.on_secondary_container.default.green }};{{ colors.on_secondary_container.default.blue }}m')"
+
+  THEME_BOLD="$(printf '\033[1m')"
+  THEME_RESET="$(printf '\033[0m')"
+
+  CONFIG_GUM_OPTS="--prompt.foreground {{ colors.primary.default.hex }} --indicator.foreground {{ colors.primary.default.hex }} --selected-indicator.foreground {{ colors.primary.default.hex }} --unselected-prefix.foreground {{ colors.outline.default.hex }} --header.foreground {{ colors.primary.default.hex }} --text.foreground {{ colors.on_surface.default.hex }} --cursor-text.foreground {{ colors.on_surface.default.hex }} --match.foreground {{ colors.tertiary.default.hex }} --placeholder.foreground {{ colors.outline.default.hex }} --prompt  > --indicator ◆ --selected-prefix  ◉  --unselected-prefix  ○  --placeholder こんにちは..."
+  CONFIG_GUM_FILTER_OPTS="$CONFIG_GUM_OPTS"
+  CONFIG_GUM_INPUT_OPTS="--prompt.foreground {{ colors.primary.default.hex }} --cursor.foreground {{ colors.on_surface.default.hex }} --placeholder こんにちは... --cursor.mode blink"
+  CONFIG_GUM_PAGER_OPTS="--foreground {{ colors.on_surface.default.hex }} --line-number.foreground {{ colors.outline.default.hex }} --match.foreground {{ colors.tertiary.default.hex }} --match-highlight.foreground {{ colors.on_primary.default.hex }} --match-highlight.background {{ colors.primary.default.hex }} --help.foreground {{ colors.outline.default.hex }} --show-line-numbers --soft-wrap --border-foreground {{ colors.primary.default.hex }}"
+  CONFIG_GUM_SPIN_OPTS="--spinner dot --spinner.foreground {{ colors.primary.default.hex }} --title.foreground {{ colors.outline.default.hex }} --align left"
+  CONFIG_GUM_CONFIRM_OPTS="--prompt.foreground {{ colors.primary.default.hex }} --selected.foreground {{ colors.on_primary.default.hex }} --selected.background {{ colors.primary.default.hex }} --unselected.foreground {{ colors.outline.default.hex }}"
+
+  CONFIG_FZF_OPTS="\
+$CONFIG_FZF_OPTS
+--color=bg+:{{ colors.surface_container_high.default.hex }}
+--color=bg:{{ colors.surface.default.hex }}
+--color=border:{{ colors.primary.default.hex }}
+--color=fg:{{ colors.on_surface.default.hex }}
+--color=gutter:{{ colors.surface.default.hex }}
+--color=header:{{ colors.primary.default.hex }}
+--color=hl+:{{ colors.tertiary.default.hex }}
+--color=hl:{{ colors.tertiary.default.hex }}
+--color=info:{{ colors.on_surface_variant.default.hex }}
+--color=marker:{{ colors.on_secondary_container.default.hex }}
+--color=pointer:{{ colors.on_secondary_container.default.hex }}
+--color=prompt:{{ colors.primary.default.hex }}
+--color=query:{{ colors.on_surface.default.hex }}:regular
+--color=scrollbar:{{ colors.outline.default.hex }}
+--color=separator:{{ colors.tertiary.default.hex }}
+--color=spinner:{{ colors.on_secondary_container.default.hex }}"
+  export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS $CONFIG_FZF_OPTS"
+fi

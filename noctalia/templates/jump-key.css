@@ -1,0 +1,29 @@
+
+:root[data-theme='noctalia'] {
+  color-scheme: {{ mode }};
+  --jk-bg-page: {{colors.surface_container_lowest.default.hex}} !important;
+  --jk-bg-surface: {{colors.surface.default.hex}} !important;
+  --jk-bg-surface-elevated: {{colors.surface_container.default.hex}} !important;
+  --jk-bg-surface-hover: {{colors.surface_container_high.default.hex}} !important;
+  --jk-border-strong: {{colors.outline.default.hex}} !important;
+  --jk-text-muted: {{colors.outline.default.hex}} !important;
+  --jk-text-secondary: {{colors.on_surface_variant.default.hex}} !important;
+  --jk-text-secondary-strong: {{colors.on_surface_variant.default.hex}} !important;
+  --jk-text-primary: {{colors.on_surface.default.hex}} !important;
+  --jk-text-primary-strong: {{colors.on_surface.default.hex}} !important;
+  --jk-text-high-contrast: {{colors.on_surface.default.hex}} !important;
+  --jk-accent-deep: {{colors.primary.default.hex | darken 14}} !important;
+  --jk-accent-deep-hover: {{colors.primary.default.hex | darken 8}} !important;
+  --jk-accent-strong: {{colors.primary.default.hex | darken 4}} !important;
+  --jk-accent: {{colors.primary.default.hex}} !important;
+  --jk-accent-hover: {{colors.primary.default.hex | lighten 4}} !important;
+  --jk-accent-bright: {{colors.primary.default.hex | lighten 12}} !important;
+  --jk-accent-text: {{colors.primary.default.hex | lighten 18}} !important;
+  --jk-accent-text-strong: {{colors.primary.default.hex | lighten 24}} !important;
+  --jk-on-accent: {{colors.on_primary.default.hex}} !important;
+  --jk-card-gradient-top: {{colors.surface_container.default.hex}} !important;
+  --jk-card-gradient-bottom: {{colors.surface.default.hex}} !important;
+  --jk-card-border: {{colors.outline_variant.default.hex}} !important;
+  --jk-card-shadow-color: {{colors.shadow.default.hex | set_alpha 0.3}} !important;
+  --jk-card-icon-bg: {{colors.surface_container_high.default.hex}} !important;
+}

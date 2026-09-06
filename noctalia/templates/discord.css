@@ -1,9 +1,4 @@
-/**
-@name system24-noctalia
-@description system24 themed by Noctalia
-@author refact0r, mikuri (noctalia adaptation)
-@version 3.2.0
-*/
+
 @import url('https://refact0r.github.io/system24/build/system24.css');
 
 body {
@@ -131,6 +126,98 @@ body {
   --purple-3: {{colors.primary.default.hex | set_lightness 65}};
   --purple-4: {{colors.primary.default.hex | set_lightness 60}};
   --purple-5: {{colors.primary.default.hex | set_lightness 55}};
+
+  --white: var(--text-1);
+  --brand-360: var(--accent-1);
+  --background-accent: var(--bg-3);
+
+  --noc-icon-idle: color-mix(in srgb, var(--accent-3) 55%, var(--text-1));
+  --noc-icon-active: var(--accent-5);
+  --noc-icon-soft: color-mix(in srgb, var(--accent-3) 35%, var(--text-3));
+  --noc-icon-off: color-mix(in srgb, var(--accent-3) 45%, transparent);
+}
+
+:root,
+.visual-refresh,
+.theme-light,
+.theme-dark,
+body,
+#app-mount {
+  
+  --text-default: var(--text-1) !important;
+  --text-strong: var(--text-1) !important;
+  --text-muted: var(--text-3) !important;
+  --text-subtle: var(--text-4) !important;
+  --text-link: var(--accent-1) !important;
+  --text-brand: var(--accent-1) !important;
+  --text-feedback-critical: var(--red-1) !important;
+  --text-feedback-positive: var(--accent-3) !important;
+  --text-feedback-warning: var(--yellow-3) !important;
+  --text-status-online: var(--online) !important;
+
+  --interactive-text-default: var(--noc-icon-idle) !important;
+  --interactive-text-hover: var(--noc-icon-active) !important;
+  --interactive-text-active: var(--noc-icon-active) !important;
+  --interactive-icon-default: var(--noc-icon-idle) !important;
+  --interactive-icon-hover: var(--noc-icon-active) !important;
+  --interactive-icon-active: var(--noc-icon-active) !important;
+
+  --icon-default: var(--noc-icon-idle) !important;
+  --icon-muted: var(--noc-icon-soft) !important;
+  --icon-subtle: var(--noc-icon-soft) !important;
+  --icon-strong: var(--noc-icon-active) !important;
+  --channel-icon: var(--noc-icon-soft) !important;
+  --icon-feedback-critical: var(--red-1) !important;
+  --icon-feedback-positive: var(--accent-3) !important;
+  --icon-feedback-warning: var(--yellow-3) !important;
+
+  --status-positive: var(--online) !important;
+  --status-danger: var(--dnd) !important;
+  --status-warning: var(--idle) !important;
+  --status-speaking: var(--online) !important;
+}
+
+[class*="toolbar_"] svg,
+[class*="toolbarButton"] svg,
+[class*="addButton"] svg,
+[class*="buttons_"] > button svg,
+[class*="searchBar"] svg {
+  color: var(--noc-icon-idle) !important;
+  fill: var(--noc-icon-idle) !important;
+}
+
+[class*="toolbar_"] button:hover svg,
+[class*="toolbarButton"]:hover svg,
+[class*="addButton"]:hover svg,
+[class*="buttons_"] > button:hover svg,
+[class*="searchBar"]:hover svg,
+[class*="selected"] svg {
+  color: var(--noc-icon-active) !important;
+  fill: var(--noc-icon-active) !important;
+}
+
+[class*="muted_"] svg,
+[class*="modeMuted"] svg {
+  color: var(--noc-icon-off) !important;
+  fill: var(--noc-icon-off) !important;
+}
+
+[class*="numberBadge"],
+[class*="mentionsBadge"],
+[class*="baseShapeRound"] {
+  background-color: var(--accent-1) !important;
+  color: var(--bg-4) !important;
+}
+
+[class*="unreadImportant"] {
+  background-color: var(--accent-1) !important;
+}
+
+[class*="unreadBar"],
+[class*="unreadTop"],
+[class*="unreadBottom"] {
+  background-color: var(--accent-1) !important;
+  color: var(--bg-4) !important;
 }
 
 [class*="popout"],

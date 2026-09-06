@@ -1,0 +1,97 @@
+
+border.width: 1
+
+window.titlebar.padding.width: 0
+window.titlebar.padding.height: 0
+
+window.active.border.color: {{colors.outline.default.hex}}
+window.inactive.border.color: {{colors.outline_variant.default.hex}}
+
+window.active.indicator.toggled-keybind.color: {{colors.error.default.hex}}
+
+window.active.title.bg.color: {{colors.surface_container_high.default.hex}}
+window.inactive.title.bg.color: {{colors.surface.default.hex}}
+window.*.title.bg: Solid
+
+window.active.label.text.color: {{colors.on_surface.default.hex}}
+window.inactive.label.text.color: {{colors.on_surface_variant.default.hex}}
+window.label.text.justify: center
+
+window.button.width: 26
+window.button.height: 26
+window.button.spacing: 0
+
+window.button.hover.bg.corner-radius: 0
+
+window.active.button.unpressed.image.color: {{colors.on_surface.default.hex}}
+window.inactive.button.unpressed.image.color: {{colors.on_surface_variant.default.hex}}
+
+window.active.shadow.size: 60
+window.inactive.shadow.size: 40
+window.active.shadow.color: {{colors.shadow.default.hex}}60
+window.inactive.shadow.color: {{colors.shadow.default.hex}}40
+
+menu.overlap.x: 0
+menu.overlap.y: 0
+menu.width.min: 20
+menu.width.max: 200
+menu.border.width: 1
+
+menu.border.color: {{colors.outline.default.hex}}
+
+menu.items.bg.color: {{colors.surface_container.default.hex}}
+menu.items.text.color: {{colors.on_surface.default.hex}}
+
+menu.items.active.bg.color: {{colors.primary.default.hex}}
+menu.items.active.text.color: {{colors.on_primary.default.hex}}
+
+menu.items.padding.x: 7
+menu.items.padding.y: 4
+menu.separator.width: 1
+menu.separator.padding.width: 6
+menu.separator.padding.height: 3
+menu.separator.color: {{colors.outline_variant.default.hex}}
+
+menu.title.bg.color: {{colors.secondary_container.default.hex}}
+menu.title.text.color: {{colors.on_secondary_container.default.hex}}
+menu.title.text.justify: Center
+
+osd.bg.color: {{colors.surface_container_highest.default.hex}}
+osd.border.color: {{colors.outline.default.hex}}
+osd.border.width: 1
+osd.label.text.color: {{colors.on_surface.default.hex}}
+
+osd.window-switcher.style-classic.width: 600
+osd.window-switcher.style-classic.padding: 4
+osd.window-switcher.style-classic.item.padding.x: 10
+osd.window-switcher.style-classic.item.padding.y: 1
+osd.window-switcher.style-classic.item.active.border.width: 2
+
+osd.window-switcher.style-classic.item.active.border.color: {{colors.primary.default.hex}}
+osd.window-switcher.style-classic.item.active.bg.color: {{colors.primary_container.default.hex}}
+
+osd.window-switcher.style-thumbnail.width.max: 80%
+osd.window-switcher.style-thumbnail.padding: 4
+osd.window-switcher.style-thumbnail.item.width: 300
+osd.window-switcher.style-thumbnail.item.height: 250
+osd.window-switcher.style-thumbnail.item.padding: 10
+osd.window-switcher.style-thumbnail.item.active.border.width: 2
+
+osd.window-switcher.style-thumbnail.item.active.border.color: {{colors.primary.default.hex}}
+osd.window-switcher.style-thumbnail.item.active.bg.color: {{colors.primary_container.default.hex}}
+osd.window-switcher.style-thumbnail.item.icon.size: 60
+
+osd.window-switcher.preview.border.width: 1
+osd.window-switcher.preview.border.color: {{colors.tertiary.default.hex}},{{colors.shadow.default.hex}},{{colors.tertiary.default.hex}}
+
+osd.workspace-switcher.boxes.width: 20
+osd.workspace-switcher.boxes.height: 20
+osd.workspace-switcher.boxes.border.width: 2
+
+snapping.overlay.region.bg.color: {{colors.primary_container.default.hex}}80
+snapping.overlay.edge.bg.color: {{colors.primary_container.default.hex}}80
+
+snapping.overlay.region.border.width: 1
+snapping.overlay.edge.border.width: 1
+snapping.overlay.region.border.color: {{colors.primary.default.hex}},{{colors.shadow.default.hex}},{{colors.primary.default.hex}}
+snapping.overlay.edge.border.color: {{colors.primary.default.hex}},{{colors.shadow.default.hex}},{{colors.primary.default.hex}}
