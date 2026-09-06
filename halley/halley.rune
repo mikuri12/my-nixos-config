@@ -12,14 +12,18 @@ env:
   NIXOS_OZONE_WL "1"
   LIBVA_DRIVER_NAME "iHD"
   MESA_LOADER_DRIVER_NAME "iris"
+  SWAYSOCK "/run/user/1000/halley/sway.sock"
+  I3SOCK "/run/user/1000/halley/sway.sock"
 end
 
 autostart:
+  once "halley-sway-bridge"
+  once "sh -c 'pkill -x wireplumber; pkill -x pipewire; sleep 1; pipewire >/dev/null 2>&1 &'"
   once "noctalia"
 end
 
 cursor:
-  theme "Hatsune-Miku"
+  theme "MikuCat"
   size 22
   hide-when-typing true
   hide-after-ms 2000
@@ -117,10 +121,10 @@ background:
   shader "space"
   path ""
   fit "cover"
-  colour "#181a26"
-  accent-colour "#8fa8d8"
   intensity 1.0
   animated false
+  colour "#181a26"
+  accent-colour "#8fa8d8"
 end
 
 field:
@@ -307,28 +311,28 @@ effects:
   shadows:
     window:
       enabled false
-      blur-radius 8
-      spread 0
+      blur-radius 1
+      spread 6
       offset-x 0
-      offset-y 5
+      offset-y 0
       colour "#05030530"
     end
 
     node:
-      enabled false
-      blur-radius 14
-      spread 0
+      enabled true
+      blur-radius 22
+      spread 3
       offset-x 0
-      offset-y 3
+      offset-y 8
       colour "#05030524"
     end
 
     overlay:
-      enabled false
-      blur-radius 24
-      spread 1
+      enabled true
+      blur-radius 30
+      spread 4
       offset-x 0
-      offset-y 7
+      offset-y 10
       colour "#05030538"
     end
   end
@@ -336,16 +340,16 @@ end
 
 decorations:
   border:
-    size 1
+    size 2
     radius 0
     colour-focused "#d65d26"
     colour-unfocused "#333333"
   end
 
   secondary-border:
-    enabled false
-    size 1
-    gap 2
+    enabled true
+    size 4
+    gap 0
     colour-focused "#fabd2f"
     colour-unfocused "#1f1f1f"
   end
@@ -356,12 +360,12 @@ end
 overlays:
   background-colour "auto"
   text-colour "auto"
-  error-colour "#fb4934"
   shape "square"
   borders "true"
   border-source "primary"
 
   blur true
+  error-colour "#fb4934"
 end
 
 keybinds:
